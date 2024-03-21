@@ -1,0 +1,39 @@
+com:
+  veena:
+    custom:
+      prop: local1239091busrefresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+resilience4j:
+  retry:
+    instances:
+      product-api:
+        max-attempts: 3
+        wait-duration: 3s
+server:
+  port: 9091
+spring:
+  cloud:
+    config:
+      enabled: true
+      refresh:
+        enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ENC(DutILsTYKXf0Tr6mRBAY15Y4RLFw5h2zBC26tALMxdaxBoQR3tekraeMAvlxDxGJ)
+    url: jdbc:mysql://localhost:3306/mydb
+    username: ENC(BJE7h4X5/JLwWynhtigCXXtIFpNGau86tckyp6Z8F31QHbBnPTrDWOItiZKv+N9n)
+  security:
+    user:
+      name: veena
+      password: user
